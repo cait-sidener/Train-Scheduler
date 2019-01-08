@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Train Scheduler</title>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="assets/style.css" type="text/css" />
+
+    <!-- Font link -->
+    <link rel="stylesheet" href="assets/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="assets/stylesheet 2.css" type="text/css" charset="utf-8" />
+
+</head>
+
+<body style="background-image: url('assets/train.jpg');">
+
+    <div class="container">
+
+        <br>
+
+        <!-- Jumbotron Title -->
+        <div class="jumbotron">
+            <h1 class="text-center">Train Information</h1>
+            <h3 class="text-center">Sidener Railway Station</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <h3 class="text-center" id="sched">
+                            Current Train Schedule</h3>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <h3 class="info">
+                                    Train Name
+                                    <span id="train"></span>
+                                </h3>
+                            </div>
+                            <div class="col-sm-2">
+                                <h3 class="info">
+                                    Destination
+                                    <span id="destination"></span>
+                                </h3>
+                            </div>
+                            <div class="col-sm-2">
+                                <h3 class="info">
+                                    Frequency (Min)
+                                    <span id="frequency"></span>
+                                </h3>
+                            </div>
+                            <div class="col-sm-2">
+                                <h3 class="info">
+                                    Next Arrival
+                                    <span id="next-arrival"></span>
+                                </h3>
+                            </div>
+                            <div class="col-sm-2">
+
+                                <h3 class="info">
+                                    Minutes Away
+                                    <span id="minutes-away"></span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Make Your Request -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        ADD TRAIN
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="train-name">TRAIN NAME</label>
+                                <input class="form-control" id="train-name" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="destination-name">DESTINATION</label>
+                                <input class="form-control" id="destination-name" type="number">
+                            </div>
+                            <div class="form-group row">
+                                <label for="first-train-time">FIRST TRAIN TIME (HH:MM - MILITARY TIME)</label>
+                                <input class="form-control" id="first-train-time" type="number">
+                            </div>
+                            <div class="form-group row">
+                                <label for="frequency-time">FREQUENCY (MIN)</label>
+                                <input class="form-control" id="frequency-time" type="number">
+                            </div>
+                            <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script src="logic.js"></script>
+
+</body>
+
+</html>
