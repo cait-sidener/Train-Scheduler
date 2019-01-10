@@ -1,8 +1,3 @@
-body {
-    background-image: url('assets/train.jpg');
-
-}
-
 .card-default {
     background-color: #f8cb4f;
     color:rgb(41, 38, 38);
@@ -11,13 +6,14 @@ body {
 }
 
 .card-header{
+    background-color: #f8cb4f;
     font-family: 'impact_label_reversedregular';
     font-size:2.5em;
 }
 
 form {
     font-family: 'impact_label_reversedregular';
-    font-size: 2em;
+    font-size: 1.9em;
 }
 
 .form-control {
@@ -39,7 +35,7 @@ h3 {
 
 .info {
     font-family: 'impact_labelregular';
-    font-size: 1.1em;
+    font-size: 1.8em;
     padding-left: 20%;
     text-align: center;
 }
@@ -52,7 +48,12 @@ label {
     padding-left: 1.5%;
 }
 
-#submit-bid{
+.mb-4{
+    background-color: #f8cb4f;
+
+}
+
+#submit{
     background-color: rgb(41, 38, 38);
     border-radius: 0px;
     font-size: .7em
@@ -60,4 +61,8 @@ label {
 
 #sched{
 font-family: 'impact_label_reversedregular';
+}
+
+tbody {
+    font-family: 'impact_label_reversedregular';
 }

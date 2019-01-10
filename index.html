@@ -38,49 +38,29 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card card-default">
+            <div class="col-md-12">
+                <!-- Current Trains -->
+                <div class="card mb-4">
+                    <div class="card-header" id="sched">
+                        Current Train Schedule</div>
                     <div class="card-body">
-                        <h3 class="text-center" id="sched">
-                            Current Train Schedule</h3>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <h3 class="info">
-                                    Train Name
-                                    <span id="train"></span>
-                                </h3>
-                            </div>
-                            <div class="col-sm-2">
-                                <h3 class="info">
-                                    Destination
-                                    <span id="destination"></span>
-                                </h3>
-                            </div>
-                            <div class="col-sm-2">
-                                <h3 class="info">
-                                    Frequency (Min)
-                                    <span id="frequency"></span>
-                                </h3>
-                            </div>
-                            <div class="col-sm-2">
-                                <h3 class="info">
-                                    Next Arrival
-                                    <span id="next-arrival"></span>
-                                </h3>
-                            </div>
-                            <div class="col-sm-2">
-
-                                <h3 class="info">
-                                    Minutes Away
-                                    <span id="minutes-away"></span>
-                                </h3>
-                            </div>
-                        </div>
+                        <table class="table table-sm table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="info">Train Name</th>
+                                    <th scope="col" class="info">Destination</th>
+                                    <th scope="col" class="info">Frequency (Min)</th>
+                                    <th scope="col" class="info">Next Arrival</th>
+                                    <th scope="col" class="info">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- Make Your Request -->
         <div class="row">
@@ -97,17 +77,17 @@
                             </div>
                             <div class="form-group row">
                                 <label for="destination-name">DESTINATION</label>
-                                <input class="form-control" id="destination-name" type="number">
+                                <input class="form-control" id="destination-name" type="text">
                             </div>
                             <div class="form-group row">
                                 <label for="first-train-time">FIRST TRAIN TIME (HH:MM - MILITARY TIME)</label>
-                                <input class="form-control" id="first-train-time" type="number">
+                                <input class="form-control" id="first-train-time" type="partial-time">
                             </div>
                             <div class="form-group row">
                                 <label for="frequency-time">FREQUENCY (MIN)</label>
                                 <input class="form-control" id="frequency-time" type="number">
                             </div>
-                            <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
+                            <button class="btn btn-primary" id="submit" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
