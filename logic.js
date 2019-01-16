@@ -51,36 +51,33 @@ $("#submit").on("click", function(event) {
     console.log(childSnapshot.val());
   
     // Store everything into a variable.
-    var trainName = childSnapshot.val().name;
-    var destination = childSnapshot.val().destination;
-    var firstTrain = childSnapshot.val().start;
-    var frequency = childSnapshot.val().frequency;
+    var sv = childSnapshot.val();
+    var trainName = sv.name;
+    var destination = sv.destination;
+    var firstTrain = sv.start;
+    var frequency = parseInt(sv.frequency);
   
     // Train Info
     console.log(trainName);
     console.log(destination);
     console.log(firstTrain);
-    console.log(frequency);
-  
-    // Prettify the employee start
-    // var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
-  
-    // Calculate the months worked using hardcore math
-    // To calculate the months worked
-    // var empMonths = moment().diff(moment(empStart, "X"), "months");
-    // console.log(empMonths);
-  
-    // Calculate the total billed rate
-    // var empBilled = empMonths * empRate;
-    // console.log(empBilled);
+    console.log("This is frequency:" + frequency);
+    
+    // Calculate the minutes until the next train using hardcore math
+    var trainRemainder = moment().diff(moment(firstTrain), "minutes") % frequency;
+    console.log(typeof trainRemainder)
+    var trainMinutes = frequency - trainRemainder;
+  console.log(trainMinutes)
+    // Calculate the arrival time
+    var trainArrival = moment().add(trainMinutes, "m").format("hh:mm A");
   
     // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(destination),
       $("<td>").text(frequency),
-      $("<td>").text(firstTrain),
-      $("<td>")
+      $("<td>").text(trainArrival),
+      $("<td>").text(trainMinutes)
     );
   
     // Append the new row to the table
