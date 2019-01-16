@@ -32,10 +32,7 @@ $("#submit").on("click", function(event) {
   
     // Uploads train data to the database
     database.ref().push(newTrain);
-    console.log(newTrain.name);
-    console.log(newTrain.destination);
-    console.log(newTrain.start);
-    console.log(newTrain.frequency);
+  
   
     alert("Train successfully added");
   
@@ -48,7 +45,6 @@ $("#submit").on("click", function(event) {
   
   // 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
   
     // Store everything into a variable.
     var sv = childSnapshot.val();
@@ -57,19 +53,13 @@ $("#submit").on("click", function(event) {
     var firstTrain = sv.start;
     var frequency = parseInt(sv.frequency);
   
-    // Train Info
-    console.log(trainName);
-    console.log(destination);
-    console.log(firstTrain);
-    console.log("This is frequency:" + frequency);
-    
+
+    firstTrain = moment(firstTrain, "HH:mm").subtract(1, "years");
     // Calculate the minutes until the next train using hardcore math
     var trainRemainder = moment().diff(moment(firstTrain), "minutes") % frequency;
-    console.log(typeof trainRemainder)
     var trainMinutes = frequency - trainRemainder;
-  console.log(trainMinutes)
     // Calculate the arrival time
-    var trainArrival = moment().add(trainMinutes, "m").format("hh:mm A");
+    var trainArrival = moment().add(trainMinutes, "minutes").format("hh:mm A");
   
     // Create the new row
     var newRow = $("<tr>").append(
