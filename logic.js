@@ -52,7 +52,6 @@ $("#submit").on("click", function(event) {
     var destination = sv.destination;
     var firstTrain = sv.start;
     var frequency = parseInt(sv.frequency);
-  
 
     firstTrain = moment(firstTrain, "HH:mm").subtract(1, "years");
     // Calculate the minutes until the next train using hardcore math
